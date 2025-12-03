@@ -6,6 +6,8 @@ import pluginReactHooks from "eslint-plugin-react-hooks";
 import pluginReact from "eslint-plugin-react";
 import globals from "globals";
 import pluginNext from "@next/eslint-plugin-next";
+import simpleImportSort from "eslint-plugin-simple-import-sort";
+import rocketseatConfig from "@rocketseat/eslint-config";
 import { config as baseConfig } from "./base.js";
 
 /**
@@ -15,6 +17,7 @@ import { config as baseConfig } from "./base.js";
  * */
 export const nextJsConfig = [
   ...baseConfig,
+  ...rocketseatConfig,
   js.configs.recommended,
   eslintConfigPrettier,
   ...tseslint.configs.recommended,
@@ -37,10 +40,13 @@ export const nextJsConfig = [
   {
     plugins: {
       "@next/next": pluginNext,
+      "simple-import-sort": simpleImportSort,
     },
     rules: {
       ...pluginNext.configs.recommended.rules,
       ...pluginNext.configs["core-web-vitals"].rules,
+      "simple-import-sort/imports": "error",
+      "simple-import-sort/exports": "error",
     },
   },
   {
