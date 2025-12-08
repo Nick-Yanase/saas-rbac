@@ -1,9 +1,9 @@
-/**@typedef {Import('prettier').config }PrettierConfig */
+/**@typedef {Import('prettier').config } PrettierConfig */
 
-import { EndOfLineState } from "typescript"
 
 /** @type {PrettierConfig} */
 const config = {
+  plugins: ['prettier-plugin-tailwindcss'],
   printWitdh: 80,
   tabWidth: 2,
   useTabs: false,

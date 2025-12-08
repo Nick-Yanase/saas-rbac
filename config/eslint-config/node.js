@@ -1,10 +1,10 @@
-import js from "@eslint/js";
-import { globalIgnores } from "eslint/config";
-import eslintConfigPrettier from "eslint-config-prettier";
-import tseslint from "typescript-eslint";
-import simpleImportSort from "eslint-plugin-simple-import-sort";
-import rocketseatConfig from "@rocketseat/eslint-config";
-import { config as baseConfig } from "./base.js";
+import js from '@eslint/js'
+import { globalIgnores } from 'eslint/config'
+import eslintConfigPrettier from 'eslint-config-prettier'
+import tseslint from 'typescript-eslint'
+import simpleImportSort from 'eslint-plugin-simple-import-sort'
+import rocketseatConfig from '@rocketseat/eslint-config'
+import { config as baseConfig } from './base.js'
 
 /**
  * A custom ESLint configuration for Node.js applications.
@@ -17,18 +17,14 @@ export const nodeConfig = [
   js.configs.recommended,
   eslintConfigPrettier,
   ...tseslint.configs.recommended,
-  globalIgnores([
-    "node_modules/**",
-    "dist/**",
-    "build/**",
-  ]),
+  globalIgnores(['node_modules/**', 'dist/**', 'build/**']),
   {
     plugins: {
-      "simple-import-sort": simpleImportSort,
+      'simple-import-sort': simpleImportSort,
     },
     rules: {
-      "simple-import-sort/imports": "error",
-      "simple-import-sort/exports": "error",
+      'simple-import-sort/imports': 'error',
+      'simple-import-sort/exports': 'error',
     },
   },
-];
+]

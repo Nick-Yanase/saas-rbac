@@ -22,6 +22,10 @@
     "globals": "^16.5.0",
     "typescript": "^5.9.2",
     "typescript-eslint": "^8.47.0",
-    "@saas/prettier": "workspace: *"
+    "@saas/prettier": "workspace:*"
+  },
+  "prettier": "@saas/prettier",
+  "eslintConfig": {
+    "extends":["./node.js"]
   }
 }
