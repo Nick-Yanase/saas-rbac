@@ -33,12 +33,12 @@ export function defineAbilityFor(user: User) { // com essa função definimos o 
   }
 
   permissions[user.role](user, builder) // função declarada em PERMISSIONS
-
-  const ability = builder.build()
+  
+  const ability = builder.build({
+    detectSubjectType(subject) {
+        return subject.__typename
+    },
+  })
 
   return ability
-  // can('invite', 'User') // falando que usuario pode convidar outro usuario
-  // cannot('delete', 'User') // fica meio redundante, pois se eu não coloquei que o can(delete, user), então pnão precisaria dessa linha
-
-  // export const ability = build()
 }
