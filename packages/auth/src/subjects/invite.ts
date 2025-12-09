@@ -1,17 +1,15 @@
 import { z } from "zod"
 
 // TUPLE: quando é um array somente com 2 posições
-export const projectSubject = z.tuple([
+export const inviteSubject = z.tuple([
   // UNION é usado quando temos "OU", então a posição 0 desse array pode ser create ou delete etc 
   z.union([
     z.literal('manage'),
     z.literal('get'),
     z.literal('create'),
     z.literal('delete'),
-    z.literal('update'),
-
   ]),
-  z.literal('Project')
+  z.literal('invite')
 ])
 
-export type ProjectSubject = z.infer<typeof projectSubject>
+export type InviteSubject = z.infer<typeof inviteSubject>
